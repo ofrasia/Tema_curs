@@ -1,7 +1,7 @@
 let selectOptiune = document.getElementById("selectOptiune");
 let buttons = document.getElementById("buttons");
 
-// Function to display the current date and time in an alert
+// Function pentru a afisa data curenta si ora, intr-un mesaj alerta
 function displayCurrentDateTime() {
     const currentDateTime = new Date();
     const formattedDateTime = currentDateTime.toLocaleString();
@@ -11,7 +11,7 @@ function displayCurrentDateTime() {
 selectOptiune.addEventListener("change", function () {
     let optiune = selectOptiune.value;
 
-    // Hide all buttons by default
+    // Ascunde toate butoanele
     document.getElementById("Identitate").style.display = "none";
     document.getElementById("Comunicare").style.display = "none";
     document.getElementById("Experienta").style.display = "none";
@@ -19,12 +19,12 @@ selectOptiune.addEventListener("change", function () {
     document.getElementById("Current_Date").style.display = "inline";
 
     if (optiune === "minim") {
-        buttons.style.display = "block"; // Show the button container
+        buttons.style.display = "block";
         document.getElementById("Identitate").style.display = "inline";
         document.getElementById("Comunicare").style.display = "inline";
         document.getElementById("Current_Date").style.display = "inline";
     } else if (optiune === "maxim") {
-        buttons.style.display = "block"; // Show the button container
+        buttons.style.display = "block";
         document.getElementById("Identitate").style.display = "inline";
         document.getElementById("Comunicare").style.display = "inline";
         document.getElementById("Experienta").style.display = "inline";
