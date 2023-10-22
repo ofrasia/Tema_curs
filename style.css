@@ -1,0 +1,98 @@
+button {
+    background-color: bisque;
+    color: black;
+    padding: 20px 20px;
+    border: -o-highlight-border;
+    border-radius: 35px;
+    cursor: pointer;
+    margin: 25px;
+
+}
+button:hover {
+    background-color: darkcyan;
+    border-bottom-style: dotted;
+    border-top-style: dashed;
+    border-right: dotted;
+    border-left: dotted;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: seagreen;
+    background-blend-mode: darken;
+}
+
+label {
+    animation: revert;
+    color: limegreen;
+    margin: 65px
+}
+
+@keyframes labelAnimation {
+    0% {
+        color: red;
+    }
+    50% {
+        color: green;
+    }
+    100% {
+        color: red;
+    }
+}
+
+label {
+    animation: labelAnimation 3s infinite;
+}
+
+@keyframes buttonAnimation {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: darkgray;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+button {
+    animation: buttonAnimation 3s infinite;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.equalizer {
+    display: flex;
+    justify-content: space-around;
+    width: 60px;
+}
+
+.bar {
+    width: 40px;
+    height: 160px;
+    background-color: darkcyan;
+    margin: 0 5px;
+    animation: equalizerAnimation 1s infinite;
+}
+
+@keyframes equalizerAnimation {
+    0%, 20% {
+        height: 80px;
+    }
+    50% {
+        height: 120px;
+    }
+    100%, 70% {
+        height: 80px;
+    }
+}
