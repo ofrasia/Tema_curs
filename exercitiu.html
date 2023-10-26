@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+<button onclick="myFunction()">Click</button>
+
+<script>
+    /* cum se declara un obiect
+    let myObj = {
+        progr_language: "java",
+        sesssion: 5,
+        active: true,
+        nobj: {
+            prenume: "Andrei",
+            varsta: "20",
+        }
+    } */
+
+    function myFunction() {
+        let myObjet = {
+            status: "on"
+        }
+        let propName = prompt ("Enter property name");
+        let value = prompt ("Enter property value");
+        myObjet [propName] = value;
+        console.log(myObjet)
+
+}
+</script>
+
+
+<script>
+        /* let mylp = {
+            programming_language= "java.script",
+            framework = "vue,js",
+            welcome = function () {
+                alert ("my welcome screen")
+            }
+        }
+
+        console.log("Print mylp object", mylp) */
+</script>
+</body>
+</html>
