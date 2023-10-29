@@ -7,7 +7,14 @@
 
 <body>
 
-<button onclick="myFunction()">Click</button>
+<div id="buttons" style="display: inline">
+    <button
+            id="Click"
+            onclick="tablou()"
+            style="display: inline"
+    >
+        Array
+    </button>
 
 <script>
     /* cum se declara un obiect
@@ -45,5 +52,129 @@
 
         console.log("Print mylp object", mylp) */
 </script>
+
+<script>
+    function MySDDArray() {
+        let tablou = [];
+
+        tablou[0] = 'zero';
+        tablou[1] = 'unu';
+
+        tablou.push('doi');
+
+        tablou[3] = tablou[0];
+        tablou[4] = {cheie:"valoare"}
+
+        console.log(tablou);
+        console.log(tablou.length);
+    }
+
+    MySDDArray();
+
+</script>
+
+
+    <script>
+        console.log('tipăresc cu FOR');
+        let tablou = ['zero', 'unu', 'doi'];
+        for (let index = 0; index < tablou.length; index = index + 1) {
+            console.log(tablou[index]);
+        }
+
+        // notiunea de index, oprire si de incrementare a acestei functii FOR
+
+        // Array = biblioteca de elemente - accesarea elementelor din biblioteca
+    </script>
+
+    <script>
+
+            // creeaza un array cu numele de parc auto
+            // creeaza 5 masini diferite, ca obiecte
+            // adauga 5 masini diferite si itereaza proprietatile masinilor (For)
+            // peste ele afisand marca, model, an de fabricatie si numar de usi in consola
+
+            let parcAuto = [];
+            let masina1 = {
+                marca: "Audi",
+                model: "A8",
+                anDeFabricatie: "1988",
+                numarUsi: "5",
+
+            }
+            let masina2 = {
+                marca: "VW",
+                model: "Polo",
+                anDeFabricatie: "2000",
+                numarUsi: "5",
+
+            }
+            let masina3 = {
+                marca: "Lada",
+                model: "Niva",
+                anDeFabricatie: "1800",
+                numarUsi: "5",
+
+            }
+            let masina4 = {
+                marca: "Citroen",
+                model: "nedefinit",
+                anDeFabricatie: "1900",
+                numarUsi: "3",
+
+            }
+            let masina5 = {
+                marca: "Dacia",
+                model: "Logan",
+                anDeFabricatie: "2055",
+                numarUsi: "5",
+
+            }
+            parcAuto.push(masina1);
+            parcAuto.push(masina2);
+            parcAuto.push(masina3);
+            parcAuto.push(masina4);
+            parcAuto.push(masina5);
+
+            console.log(parcAuto)
+            for (let i = 0; i < parcAuto.length; i++) {
+                console.log(parcAuto[i]);
+            }
+
+            let motociclete = []
+
+            let moto1 = {
+                marca: "Honda",
+                model: "Hornet",
+                culoare: "rosu",
+            }
+
+            let moto2 = {
+                marca: "Suzuki",
+                model: "GSX600",
+                culoare: "galben",
+            }
+
+            let moto3 = {
+                marca: "Yamaha",
+                model: "habarNuAm",
+                culoare: "gri",
+            }
+
+            motociclete.push(moto1);
+            motociclete.push(moto2);
+            motociclete.push(moto3);
+
+
+            console.log(motociclete.length)
+            // index 0 de exemplus, defineste punctul de inceput al iteratiei;
+            // daca incepem cu index 1, iteratia va fi afisata cu cel de-al 2-lea obiect.
+
+            for (let index = 0; index < motociclete.length; index = index + 1) {
+                console.log(motociclete[index].marca,motociclete[index].model,motociclete[index].culoare)
+            }
+    </script>
+
+
+
 </body>
 </html>

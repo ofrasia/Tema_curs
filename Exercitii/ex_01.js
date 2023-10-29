@@ -1,8 +1,14 @@
 function faOrice(valoareInitiala) {
-    rezultat = valoareInitiala+valoareInitiala;
-    console.log(rezultat)
-    console.timeStamp()
+    // Adună valoarea inițială cu ea însăși și o stochează în variabila "rezultat".
+    rezultat = valoareInitiala + valoareInitiala;
+
+    // Afișează valoarea rezultatului în consolă.
+    console.log(rezultat);
+
+    // Adaugă un timestamp în consolă pentru a înregistra momentul actual al apelului funcției.
+    // console.timeStamp();
 }
+
 
 function faAltceva() {
     // Inițializăm un obiect nou numit "person".
