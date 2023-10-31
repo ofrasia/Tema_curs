@@ -172,8 +172,49 @@
             for (let index = 0; index < motociclete.length; index = index + 1) {
                 console.log(motociclete[index].marca,motociclete[index].model,motociclete[index].culoare)
             }
-    </script>
 
+
+            let product = 1;
+            for (let index = 1; index < 6; index = index+1) {
+                product = product * index
+
+               if (index===5) {
+                    console.log(product)
+                }
+
+                /* if (Number.isInteger(index / 2)) {
+                    // Code to be executed if the condition is true
+                    console.log("Nr. is integer")
+
+                    console.log(index)
+                } */
+            }
+
+            let n1 = 0;
+            let n = 1;
+            let sum = 0;
+            for (let index = 0; index < 11; index = index+1) {
+                if (index === 0) {
+                    console.log(n1)
+                } else if (index === 1) {
+                    console.log(n)
+                } else {
+                    sum = n+n1;
+                    n1 = n;
+                    n = sum;
+                    console.log(sum);
+                }
+            }
+
+            let myArray = [1, 2, 3, 4, 5]
+            for (let index = 0; index <5; index = index+1) {
+                console.log (myArray[index])
+            }
+
+
+
+
+    </script>
 
 
 </body>
