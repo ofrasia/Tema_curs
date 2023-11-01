@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex. Porj. Js</title>
+    
+</head>
+<body>
+
+<div>
+    <input type= "text" id="data" placeholder="search for a number">
+</div>
+
+
+<button id="Search" onclick="cautaInTablou()" style="display: inline">Search
+</button>
+
+    <script>
+
+        function cautaInTablou() {
+            let numar = {
+                valoare: 0,
+                gasit: false
+            }
+
+            let tablou = [];
+            tablou[0] = 678;
+            tablou[1] = 90;
+            tablou[2] = 23;
+            tablou[3] = 15;
+            tablou[4] = 7;
+            tablou[5] = 9;
+            tablou[6] = 10;
+            tablou[7] = 1;
+            tablou[8] = 2;
+            tablou[9] = 3;
+            // tablou.push('text');
+            // alert(tablou)
+
+            let id = document.getElementById("data")
+            console.log(id.value)
+
+            let gasit = false
+            for (let index = 0; index < tablou.length; index = index+1) {
+                if (tablou[index] === id.value) {
+                    gasit = true
+                    // alert("Am gasit numarul")
+                }
+                else {
+                    // alert("Numarul nu a fost gasit")
+                }
+            }
+            if (gasit == true) {
+                alert ("Numar gasit")
+            } else {
+                alert ("Nu am gasit")
+            }
+        }
+
+    </script>
+
+</body>
+</html>
