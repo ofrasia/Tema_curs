@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configurare Telefon</title>
+</head>
+<body>
+    <h1>Configurare Telefon</h1>
+
+    <!-- Input pentru numar întreg -->
+    <input type="number" id="numar-intreg" placeholder="Introduceți un număr întreg mai mare de 5">
+    <!-- Buton pentru a continua -->
+    <button onclick="verificaNumar()">Continuă</button>
+
+    <!-- Formularul de configurare al telefonului (inițial ascuns) -->
+    <div id="formular-telefon" style="display: none;">
+        <h2>Formular de configurare telefon</h2>
+        <!-- Câmpuri pentru model, preț, constructor și memorie -->
+        <label for="model">Model:</label>
+        <input type="text" id="model">
+        <label for="pret">Preț:</label>
+        <input type="number" id="pret">
+        <label for="constructor">Constructor:</label>
+        <input type="text" id="constructor">
+        <label for="memorie">Memorie:</label>
+        <input type="text" id="memorie">
+        <!-- Buton pentru a adăuga configurații -->
+        <button onclick="addConfig()">Add</button>
+    </div>
+
+    <!-- Buton pentru a afișa configurațiile -->
+    <button id="display-button" style="display: none;" onclick="showConfigs()">Display</button>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Funcție pentru verificarea numărului introdus
+        function verificaNumar() {
+            var numarIntreg = document.getElementById("numar-intreg").value;
+            if (numarIntreg <= 5) {
+                alert("Numărul introdus trebuie să fie mai mare de 5.");
+                document.getElementById("numar-intreg").value = "";
+            } else {
+                document.getElementById("formular-telefon").style.display = "block";
+            }
+        }
+
+        // Un array pentru a stoca configurațiile telefonului
+        var configuratii = [];
+
+        // Funcție pentru a verifica dacă numărul de configurații este egal cu numărul introdus
+        function isEqual() {
+            var numarIntreg = document.getElementById("numar-intreg").value;
+            return configuratii.length === parseInt(numarIntreg);
+        }
+
+        // Funcție pentru a adăuga o configurație nouă
+        function addConfig() {
+            var model = document.getElementById("model").value;
+            var pret = document.getElementById("pret").value;
+            var constructor = document.getElementById("constructor").value;
+            var memorie = document.getElementById("memorie").value;
+
+            var configuratie;
+
+            if (model) {
+                if (pret) {
+                    if (constructor) {
+                        if (memorie) {
+                            configuratie = {
+                                model: model,
+                                pret: pret,
+                                constructor: constructor,
+                                memorie: memorie
+                            };
+                        }
+                    }
+                }
+
+                configuratii.push(configuratie);
+
+                if (isEqual()) {
+                    document.getElementById("formular-telefon").style.display = "none";
+                    document.getElementById("display-button").style.display = "block";
+                }
+
+                // Golește câmpurile de input după adăugarea configurației
+                document.getElementById("model").value = "";
+                document.getElementById("pret").value = "";
+                document.getElementById("constructor").value = "";
+                document.getElementById("memorie").value = "";
+            }
+        }
+
+        // Funcție pentru a afișa configurațiile în consolă
+        function showConfigs() {
+            for (var i = 0; i < configuratii.length; i++) {
+                console.log("Configurație " + (i + 1) + ":");
+                console.log("Model: " + configuratii[i].model);
+                console.log("Preț: " + configuratii[i].pret);
+                console.log("Constructor: " + configuratii[i].constructor);
+                console.log("Memorie: " + configuratii[i].memorie);
+                console.log("------------------------");
+            }
+        }
+    </script>
+</body>
+</html>
