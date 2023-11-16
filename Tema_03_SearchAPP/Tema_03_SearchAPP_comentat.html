@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <h2>
+        <title>SearchApp</title>
+    </h2>
+</head>
+
+<body>
+    <h2>SearchApp</h2>
+
+    <button onclick="selectOperator('!=')">Select operator "!="</button> <!--creeaza buton selectOperator cu parametru "!=" (operatorul != este un operator de inegalitate care verifică dacă cele două valori comparate nu sunt egale.)-->
+    <button onclick="selectOperator('>')">Select operator ">"</button> <!--creeaza buton selectOperator cu parametru ">" (operatorul > este folosit pentru a verifica dacă prima valoare este mai mare decât a doua valoare)-->
+    <button onclick="generateInputTable()">Generate input table</button>
+    <button onclick="generateReferenceInput()">Set reference value</button>
+    <button onclick="searchReference()">Search Reference</button>
+    <button onclick="resetValues()">Reset</button>
+
+    <script>
+        function selectOperator(op) { // definim functia selectOperator cu parametrul (op)
+            selectedOperator = op; // atribuim functiei selectOperator atributul "op"
+            console.log("Selected operator:", selectedOperator); // afisam in consola mesaul sub forma de string "Selected operator" si valoarea variabilei selectedOperator
+        }
+
+        let selectedOperator = ""; // initializazm variabila globala "selectedOperator"
+        let inputTable = []; // initializam variabila globala "inputTable" ca un array gol
+        let referenceValue = ""; // intializam variabila globala "referenceValue"
+
+
+        function generateInputTable() { // definim functia "generateIputTable"
+            inputTable = [];  // cream un array gol
+            for (let index = 1; index <= 2; index++) { // creeam un "for" loop, care sa inceapa initializarea de la numarul 1, conditia sa se opreasca la un numaru mai mic, sau egal cu 10, si incrementare
+                let num = prompt("Enter number " + index + ":"); // initializam variabila "num" cu o valoare introdusa de user, cu ajutorul functiei prompt
+                inputTable.push(parseInt(num)); // afisam valoarea in array-ul "inputTable"
+                console.log("Generated input table:", inputTable); // afisam in consola mesajul "Generated input table" si valoarea array-ului "inputTable"
+            }
+        }
+
+        function generateReferenceInput() { // definim functia "generateReferenceInput"
+            referenceValue = prompt("Enter the reference value:"); // userului i se va afisa un prompt care va contine stringul "Enter the reference value", unde va putea atribui o valoare valorii de referinta
+            console.log("Reference value set:", referenceValue); // afisam in consola mesajul "Reference value set" si valoarea variabilei "referenceValue"
+        }
+
+        function searchReference() { // definim functia "searchReference"
+            if (selectedOperator === "") 
+            if (inputTable.length === 0) 
+            if (referenceValue === "") { // se verifica cu conditia "if", daca a fost selectat un operator, daca a fost introdusa o valoare de catre utilizator in "inputTable" si daca s-a atribuit o valoare, valorii de referinta
+                console.log("Please select the operator, generate the number list, and set the reference value."); // in cazul in care conditiile de mai sus nu sunt indeplinite, se va afisa mesajul "Please select the operator, generate the number list, and set the reference value."
+                return; // se incheie functia
+            }
+
+            let result = []; // initializam variabila globala "result" ca un array gol
+            for (let i = 0; i < inputTable.length; i++) { // creeam un "for" loop, care sa inceapa initializarea de la numarul 0, conditia sa fie mai mic decat valoarea array-ului "inputTable", si incrementare
+                let num = inputTable[i]; // initializam variabila "num" si ii atribuim vAloarea array-ului "inputTable"
+                if (selectedOperator === "!=") { // conditia "if" de fata, verifica tipul de date daca sunt diferite
+                    if (num != parseInt(referenceValue)) { // verificam daca valoarea din "num" este diferita fata de variabila "referenceValue"
+                        result.push(num); // se adaugam valoarea din "num" in array-ul "result"
+                    }
+                } else if (selectedOperator === ">") {
+                    if (num > parseInt(referenceValue)) {
+                        result.push(num);
+                    }
+                }
+            }
+
+
+            if (result.length > 0) { // se verifica daca lungimea array-ului "result" este mai mare decat "0"
+                console.log("Found elements:", result); // afisam in consola stringul "Found elements" si valoarea rezultatului
+            } else { // sau (in caz contrar)
+                console.log("No elements found based on the condition."); // afisam in consola stringul "No elements found based on the condition."
+            }
+        }
+
+        function resetValues() { // definim functia "resetValues"
+            selectedOperator = ""; // valorile variabilei se vor reseta
+            inputTable = []; // valorile array-ului se vor reseta
+            referenceValue = ""; // valorile variabilei se vor reseta
+            console.log("Values reset."); // se afiseaza in consola mesajul "Values reset", insemnand ca toate valorile au revenit la setarile initiale
+        }
+
+    </script>
+
+</body>
+
+</html>
