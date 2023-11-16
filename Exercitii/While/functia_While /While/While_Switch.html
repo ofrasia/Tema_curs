@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>While / Switch ex</title>
+    
+</head>
+<body>
+    <input type= "text" id="number" placeholder="Introduce numar..." oninput="addNumber()">    
+    <script>
+
+    // creeaza functie care sa verifice ca un sir de caractere este numar
+
+    
+    const stop = "#Stop";
+        let tablou = [];
+        let valoare = document.getElementById("number");
+
+    // Se declară o variabilă numar și i se atribuie un obiect. Acest obiect are două proprietăți:
+    // valoare este inițializată cu valoarea numerică 0.
+    // isNumber este o funcție anonimă (fără nume) definită în obiect care returnează rezultatul 
+    // negării operației isNaN() aplicată pe this.valoare. Această funcție verifică dacă 
+    // valoare din cadrul obiectului numar este un număr sau nu și returnează true dacă 
+    // este un număr și false în caz contrar.
+
+        let numar = {
+            valoare: 0,
+            isNumber: function(){
+                return !isNaN(this.valoare);    
+            }
+        };
+    
+
+        function addNumber() {
+        // console.log(valoare.value);
+                
+        tablou.push(valoare.value);
+        numar.valoare = parseInt(valoare.value); // actualizam valoarea numarului in obiectul 'numar'
+        console.log(tablou);
+
+        if (numar.isNumber()) {
+            console.log('Este un numar!');
+        } else {
+            console.log('Nu este un numar!');
+        }
+    }
+        
+        
+
+        // creeaza functie care sa verifice ca un sir de caractere este numar
+        
+    </script>
+
+</body>
+</html>
